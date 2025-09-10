@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import algorithm
+from routers import classifier
 
 app = FastAPI(
     title="My Modern FastAPI Service",
@@ -8,7 +8,7 @@ app = FastAPI(
 )
 
 # Register routers
-app.include_router(algorithm.router)
+app.include_router(classifier.router)
 
 @app.get("/")
 async def root():

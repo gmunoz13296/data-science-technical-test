@@ -3,3 +3,6 @@ uvicorn[standard]
 numpy
 pandas
 scikit-learn
+pytest
+httpx
+pytest-covP
