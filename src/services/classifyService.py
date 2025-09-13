@@ -12,14 +12,6 @@ class ClassifyService():
             algorithm = AlgorithmType.LogisticRegression.value
         logistic = factory.create(self.from_string_ci(algorithm))
         return logistic.classify(InputData(numbers=inputData.numbers, algorithm=algorithm))
-
-    def train(self):
-        factory = AlgorithmFactory()
-        dataset = DataSet()
-        services = factory.getAll()
-        for service in services:
-            service.train(dataset.getDataSet())
-        return "successfull"
     
     def from_string_ci(self, value: str):
         if not isinstance(value, str):
