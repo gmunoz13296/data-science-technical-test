@@ -80,15 +80,15 @@ For this project, we kept **Logistic Regression** as the baseline model because 
 ---
 
 ## How to activate enviroment:
-Copy and paste that command into ther terminal:
+Copy and paste that command into the terminal:
 `.\venv\Scripts\activate`
 
 ## How to run:
-Copy and paste that command into ther terminal:
+Copy and paste that command into the terminal:
 `uvicorn main:app --reload`
 
 ## How to get test coverage:
-Copy and paste that command into ther terminal:
+Copy and paste that command into the terminal:
 `pytest --cov=. --cov-report=term-missing`
 
 ## How to use:
