@@ -4,9 +4,6 @@ from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val
 
 class DataSet():
 
-    def getDataSet(self):
-        pass
-
     def fizzbuzz_label(self, n):
         """
         Returns the Fizz/Buzz/FizzBuzz/None label for a given number
@@ -21,7 +18,7 @@ class DataSet():
         else:
             return "None"
         
-    def getDataset(self):
+    def getDataSet(self):
         # -----------------------------
         # Training Dataset Construction
         # -----------------------------

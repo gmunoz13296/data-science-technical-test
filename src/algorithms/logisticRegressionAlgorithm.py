@@ -18,8 +18,12 @@ import joblib
 
 class LogisticRegressionAlgorithm(ClassificationAlgorithm):
     
-    def classify(self, inputData) -> ClassificationResult:     
-     model = joblib.load("model.pkl")
+    def classify(self, inputData) -> ClassificationResult: 
+     model = None  
+     try:  
+      model = joblib.load("model.pkl")
+     except Exception:
+       pass
      if(not model):
        dataset = DataSet()
        self.train(dataset.getDataSet())
