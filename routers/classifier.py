@@ -10,10 +10,6 @@ Configure.addAlgorithms()
 
 service = ClassifyService()
 
-@router.post("/train")
-def train():
-    return service.train()
-
 @router.post("/classify", response_model=OutputResponse)
 def classifyNumbers(inputData: InputData):    
     return service.classify(inputData)

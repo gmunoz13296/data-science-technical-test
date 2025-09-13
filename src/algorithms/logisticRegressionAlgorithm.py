@@ -12,12 +12,18 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
+from ..dataset.dataset import DataSet
 
 import joblib
 
 class LogisticRegressionAlgorithm(ClassificationAlgorithm):
-    def classify(self, inputData) -> ClassificationResult:
+    
+    def classify(self, inputData) -> ClassificationResult:     
      model = joblib.load("model.pkl")
+     if(not model):
+       dataset = DataSet()
+       self.train(dataset.getDataSet())
+       model = joblib.load("model.pkl")
      df_test = pd.DataFrame({'n': inputData.numbers})
      df_test['is3'] = (df_test['n'] % 3 == 0).astype(int)
      df_test['is5'] = (df_test['n'] % 5 == 0).astype(int)
